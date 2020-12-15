@@ -29,6 +29,11 @@
             <error-output class="tel-error" for="tel"></error-output>
         </div>
         <div>
+            <label for="password">Enter Password: </label>
+            <input type="password" id="password" name="password">
+            <error-output class="password-error" for="password"></error-output>
+        </div>
+        <div>
             <button>Submit</button>
         </div>
     </form>
@@ -54,6 +59,13 @@
             if (regtel.test(tel.value))
                 telError.textContent = "";
             else telError.textContent = "MobileNo is Incorrect "; 
+        });
+        const pwdError = document.querySelector('.password-error');
+        password.addEventListener('input', function() {
+            const pwdRegex = /^[a-zA-Z]{8}$/;
+            if (pwdRegex.test(password.value))
+                pwdError.textContent = "";
+            else pwdError.textContent = "Password is Incorrect ";
         });
     </script>
 </body>
